@@ -128,9 +128,6 @@
 							}
 
 							const value = data_normalized[index];
-							if (j == 0) {
-								console.log(`tape${tape + 1}の${index + 1}サンプル: ${value}`);
-							}
 							ctx.fillStyle = `rgb(${value}, ${value}, ${value})`;
 							ctx.fillRect(x, y, barWidth, 250);
 						}
@@ -170,7 +167,8 @@
 				ctx.font = '30px monospace';
 				ctx.fillStyle = 'black';
 				for (let i = 0; i < 6; i++) {
-					for (let j = 0; j < 4; j++) {
+					ctx.fillText(file.name, 200, 30 + 292.5 * i);
+					for (let j = 1; j < 4; j++) {
 						ctx.fillText(`${num * 6 + i + 1}`.padStart(3, '0'), 300 + 580 * j, 30 + 292.5 * i);
 					}
 				}
